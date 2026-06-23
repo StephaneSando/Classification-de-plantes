@@ -145,7 +145,3 @@ Ouvrir `Plant_Disease_Local_Keras.ipynb` dans VS Code ou Jupyter et sélectionne
 - Construire un ResNet from scratch en comprenant le rôle des skip connections
 - Mettre en place du transfer learning en deux phases (feature extraction + fine-tuning)
 - Configurer un environnement Deep Learning sous Windows avec GPU (CUDA + cuDNN + TF)
-
----
-
-*Projet réalisé dans le cadre du cours de Deep Learning — EFREI Paris*
