@@ -1,18 +1,18 @@
 # Classification de maladies des plantes par Deep Learning
 
-Projet académique réalisé à l'**EFREI Paris** — comparaison de 4 architectures de réseaux de neurones pour détecter les maladies des plantes à partir de photos de feuilles.
+Projet académique réalisé à l'**EFREI Paris**, comparaison de 4 architectures de réseaux de neurones pour détecter les maladies des plantes à partir de photos de feuilles.
 
 ---
 
 ## Contexte
 
-Les maladies agricoles causent chaque année des pertes considérables. Ce projet explore comment le Deep Learning peut automatiser leur détection visuelle, en comparant différentes approches — du réseau dense basique jusqu'au transfer learning sur un modèle pré-entraîné sur ImageNet.
+Les maladies agricoles causent chaque année des pertes considérables. Ce projet explore comment le Deep Learning peut automatiser leur détection visuelle, en comparant différentes approches du réseau dense basique jusqu'au transfer learning sur un modèle pré-entraîné sur ImageNet.
 
 ---
 
 ## Dataset
 
-**PlantVillage** — 10 classes sélectionnées parmi 38 (5 plantes, chacune saine et malade)
+**PlantVillage**: 10 classes sélectionnées parmi 38 (5 plantes, chacune saine et malade)
 
 | Plante | Classe saine | Classe malade |
 |--------|-------------|---------------|
@@ -22,17 +22,17 @@ Les maladies agricoles causent chaque année des pertes considérables. Ce proje
 | Pomme de terre | Potato healthy | Late blight |
 | Tomate | Tomato healthy | Bacterial spot |
 
-> ~4 000 images, redimensionnées à 128×128 px — découpage 70% train / 15% val / 15% test.
+> ~4 000 images, redimensionnées à 128×128 px découpage 70% train / 15% val / 15% test.
 
 ---
 
 ## Modèles comparés
 
 ### 1. MLP dense
-Réseau entièrement connecté — sert de baseline. Aplatit l'image et enchaîne deux blocs Dense.
+Réseau entièrement connecté sert de baseline. Aplatit l'image et enchaîne deux blocs Dense.
 
 ### 2. CNN simple
-Trois blocs Conv2D + MaxPooling sans régularisation — met en évidence le surapprentissage.
+Trois blocs Conv2D + MaxPooling sans régularisation met en évidence le surapprentissage.
 
 ### 3. CNN régularisé
 Même architecture, avec toute la panoplie de régularisation :
@@ -43,7 +43,7 @@ Même architecture, avec toute la panoplie de régularisation :
 - GlobalAveragePooling au lieu de Flatten
 
 ### 4. ResNet maison
-Réseau résiduel construit from scratch avec des skip connections — évite la disparition du gradient dans les réseaux profonds.
+Réseau résiduel construit from scratch avec des skip connections évite la disparition du gradient dans les réseaux profonds.
 
 ### 5. Transfer Learning — DenseNet121
 DenseNet121 pré-entraîné sur ImageNet (gelé), suivi d'un fine-tuning des 30 dernières couches.
@@ -83,11 +83,11 @@ DenseNet121 pré-entraîné sur ImageNet (gelé), suivi d'un fine-tuning des 30 
 ## Stack technique
 
 - **Python 3.10**
-- **TensorFlow 2.10 / Keras** — construction et entraînement des modèles
-- **NumPy / Pandas** — manipulation des données
-- **Matplotlib / Seaborn** — visualisation
-- **scikit-learn** — métriques (F1, matrice de confusion)
-- **GPU** NVIDIA RTX 3050 — entraînement accéléré via CUDA 11.8
+- **TensorFlow 2.10 / Keras** construction et entraînement des modèles
+- **NumPy / Pandas** manipulation des données
+- **Matplotlib / Seaborn** visualisation
+- **scikit-learn** métriques (F1, matrice de confusion)
+- **GPU** NVIDIA RTX 3050, entraînement accéléré via CUDA 11.8
 
 ---
 
